@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RISI Service Desk | Учет заявок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <header class="header">
+            <h1>RISI Service Desk</h1>
+            <p>Информационная система учета заявок и услуг</p>
+            <p class="company">ООО «Рубан и Старков Индастриз»</p>
+        </header>
+
+        <!-- Навигация -->
+        <nav class="nav">
+            <button class="nav-btn active" data-tab="requests">📋 Заявки</button>
+            <button class="nav-btn" data-tab="clients">👥 Клиенты</button>
+            <button class="nav-btn" data-tab="services">⚙️ Услуги</button>
+        </nav>
+
+        <!-- Вкладка: Заявки -->
+        <div id="requests-tab" class="tab active">
+            <div class="toolbar">
+                <button class="btn btn-primary" id="addRequestBtn">+ Новая заявка</button>
+                <select id="statusFilter" class="filter-select">
+                    <option value="all">Все статусы</option>
+                    <option value="Новая">Новая</option>
+                    <option value="В работе">В работе</option>
+                    <option value="Выполнена">Выполнена</option>
+                    <option value="Закрыта">Закрыта</option>
+                </select>
+            </div>
+            <div id="requestsList" class="requests-list">
+                <!-- Заявки будут загружены сюда -->
+            </div>
+        </div>
+
+        <!-- Вкладка: Клиенты -->
+        <div id="clients-tab" class="tab">
+            <div class="toolbar">
+                <button class="btn btn-primary" id="addClientBtn">+ Новый клиент</button>
+            </div>
+            <div id="clientsList" class="clients-list">
+                <!-- Клиенты будут загружены сюда -->
+            </div>
+        </div>
+
+        <!-- Вкладка: Услуги -->
+        <div id="services-tab" class="tab">
+            <div class="toolbar">
+                <button class="btn btn-primary" id="addServiceBtn">+ Новая услуга</button>
+            </div>
+            <div id="servicesList" class="services-list">
+                <!-- Услуги будут загружены сюда -->
+            </div>
+        </div>
+
+        <!-- Модальное окно для добавления/редактирования -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">Добавить</h2>
+                <div id="modalBody"></div>
+                <button id="modalSaveBtn" class="btn btn-success">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
